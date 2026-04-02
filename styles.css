@@ -1,0 +1,135 @@
+/* 🌌 Base layout */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #550f59;
+  color: #efeff1;
+}
+
+/* Center content */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 🧭 Header */
+header {
+  margin: 0 auto;
+  background-color: #320434;
+  padding: 15px 20px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav a {
+  color: #bf94ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #ffffff;
+}
+
+/* 🧾 Footer */
+footer {
+  background-color: #320434;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  font-size: 14px;
+  color: #adadb8;
+}
+
+/* 🖼 Images */
+img {
+  border-radius: 0px;
+  margin: 20px 0;
+}
+
+/* 🔘 Buttons */
+button {
+  background: #9146ff;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: medium;
+}
+
+button:hover {
+  background: #772ce8;
+}
+
+/* 🔍 Search input */
+input[type="text"] {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #2f2f35;
+  background: #18181b;
+  color: white;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* grid for the emotes page */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 112px);
+  justify-content: center; /* centers grid nicely */
+  gap: 16px;
+}
+
+/* card for each emote */
+.card {
+  width: 122px;
+  height: 122px;
+  background: #550f59;
+  border-radius: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* prevents overflow artifacts */
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+/* Hover effect */
+.card:hover {
+  transform: translateY(-4px) scale(1.05);
+  background: #b15cb6;
+}
+
+.card img {
+  width: 112px;
+  height: 112px;
+  border-radius: 0px;
+}
+
+/* ✨ Links */
+a {
+  color: #bf94ff;
+}
+
+a:hover {
+  color: #ffffff;
+}
+
+#suggestions li {
+  padding: 6px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+#suggestions li:hover {
+  background-color: #333; /* dark grey */
+}
