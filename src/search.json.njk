@@ -1,0 +1,16 @@
+---
+permalink: "/search.json"
+eleventyExcludeFromCollections: true
+---
+
+[
+{% for item in collections.emotes %}
+{
+  "title": "{{ item.data.title }}",
+  "tags": {{ item.data.tags | dump | safe }},
+  "description": "{{ item.data.description }}",
+  "url": "{{ item.url }}",
+  "image": "{{ item.data.image }}"
+}{% if not loop.last %},{% endif %}
+{% endfor %}
+]
