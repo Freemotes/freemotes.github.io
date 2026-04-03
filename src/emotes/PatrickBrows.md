@@ -1,14 +1,15 @@
 ---
 layout: layout.njk
-title: "Patrick Brows"
-date: 2026-03-23
-tags: ["cartoon", "spongebob", "patrick", "yellow", "animated"]
-description: "Woop."
-image: "/images/1-PatrickBrows.gif"
+title: "PatrickBrows"
+date: 2026-04-02
+tags: ["patrick","spongebob","brows","animated"]
+description: ""
+image: "/images/patrickbrows-112.gif"
+image_56: ""
+image_28: ""
 ---
 
 <p>
-  <a href="{{ image }}" download>
-    <button>Download Emote</button>
-  </a>
+  <button onclick="downloadEmote()">Download Emote</button>
 </p>
+
