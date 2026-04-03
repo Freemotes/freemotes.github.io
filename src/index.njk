@@ -8,17 +8,14 @@ title: Free emotes
 <h2>Latest ✨</h2>
 
 {% set sortedEmotes = collections.emotes | sort(attribute="data.date") | reverse %}
-{% set latestDate = sortedEmotes[0].data.date.toISOString().slice(0,10) %}
 
 <div class="grid">
-  {% for emote in sortedEmotes %}
-    {% if emote.data.date.toISOString().slice(0,10) == latestDate %}
-      <div class="card">
-        <a href="{{ emote.url }}">
-          <img src="{{ emote.data.image }}" alt="{{ emote.data.title }}" width="112" height="112">
-        </a>
-      </div>
-    {% endif %}
+  {% for emote in sortedEmotes.slice(0, 5) %}
+    <div class="card">
+      <a href="{{ emote.url }}">
+        <img src="{{ emote.data.image }}" alt="{{ emote.data.title }}" width="112" height="112">
+      </a>
+    </div>
   {% endfor %}
 </div>
 
