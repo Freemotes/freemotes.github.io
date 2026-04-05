@@ -17,7 +17,6 @@ const titleEl = document.querySelector("h1");
 
 if (query && titleEl) {
   titleEl.textContent = `Search Results for "${query}"`;
-  document.title = `Search: ${query}`;
 }
 
   const res = await fetch("/search.json");

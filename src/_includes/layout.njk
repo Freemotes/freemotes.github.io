@@ -1,7 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>{{ title }}</title>
+  <title>
+  {% if title %}
+    {% if title.includes("Freemotes") %}
+      {{ title }}
+    {% else %}
+      Freemotes - {{ title }}
+    {% endif %}
+  {% else %}
+    Freemotes
+  {% endif %}
+</title>
   <link rel="stylesheet" href="/styles.css">
 </head>
 
