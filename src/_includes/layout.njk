@@ -4,57 +4,158 @@
   <title>{{ title }}</title>
   <link rel="stylesheet" href="/styles.css">
 </head>
+
 <body>
 
-<header>
-  <nav>
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/emotes/">Emotes</a></li>
-      <li><a href="/about">About Me</a></li>
-    </ul>
-  </nav>
-</header>
+<div class="wrapper">
+  <header>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/emotes/">Emotes</a></li>
+        <li><a href="/about">About Me</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<hr>
 
-<main>
-  <h1>{{ title }}</h1>
+  <main class="page-body">
+    <h1>{{ title }}</h1>
 
-  {% if image %}
-    <img src="{{ image }}" alt="{{ title }}">
-  {% endif %}
+    {% if image %}
+      <img src="{{ image }}" alt="{{ title }}">
+    {% endif %}
 
-    {% if image_56 %}
-    <img src="{{ image_56 }}" alt="{{ title }}">
-  {% endif %}
+      {% if image_56 %}
+      <img src="{{ image_56 }}" alt="{{ title }}">
+    {% endif %}
 
-    {% if image_28 %}
-    <img src="{{ image_28 }}" alt="{{ title }}">
-  {% endif %}
+      {% if image_28 %}
+      <img src="{{ image_28 }}" alt="{{ title }}">
+    {% endif %}
 
-  {% if description %}
-    <p>{{ description }}</p>
-  {% endif %}
+    {% if description %}
+      <p>{{ description }}</p>
+    {% endif %}
 
-  {{ content | safe }}
+    {{ content | safe }}
 
-  {% if image_56 or image_28 %}
-<p>
-  When uploading this emote to Twitch, please disable the "Auto-resize" slider,
-  and instead upload the 3 images to their respective dimension slots.
-</p>
-{% endif %}
-</main>
-
-<hr>
-
-<footer>
+    {% if image_56 or image_28 %}
   <p>
-    Emotes created by <a href="https://www.twitch.tv/gromfalloon" target="_blank" rel="noopener noreferrer">Gromfalloon</a> on Twitch, please <a href="/attribute">attribute</a> the emotes when you upload them. 
+    When uploading this emote to Twitch, please disable the "Auto-resize" slider,
+    and instead upload the 3 images to their respective dimension slots.
   </p>
-</footer>
+  {% endif %}
 
+  <h3>Search for an emote:</h3>
+
+  <div style="position: relative; max-width: 300px; display: flex; gap: 6px;">
+    <input 
+      type="text" 
+      id="searchInput" 
+      placeholder="Search emotes..." 
+      autocomplete="off" 
+    />
+    <button id="searchButton">Search</button>
+
+    <ul id="suggestions" style="
+      border-radius: 6px;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      list-style: none;
+      padding: 0;
+      margin: 4px 0 0;
+      background: #18181b;
+      max-height: 150px;
+      overflow-y: auto;
+      hover: white
+    "></ul>
+    
+  </div>
+
+  <script>
+    const input = document.getElementById("searchInput");
+    const button = document.getElementById("searchButton");
+    const suggestionsBox = document.getElementById("suggestions");
+
+    let allTags = [];
+
+    // Load tags from search.json
+    fetch("/search.json")
+      .then(res => res.json())
+      .then(data => {
+        const tagSet = new Set();
+
+        data.forEach(item => {
+          if (item.tags && Array.isArray(item.tags)) {
+            item.tags.forEach(tag => tagSet.add(tag));
+          }
+        });
+
+        allTags = Array.from(tagSet);
+      });
+
+    function performSearch() {
+      const query = input.value.trim();
+      if (query) {
+        window.location.href = `/search/?q=${encodeURIComponent(query)}`;
+      }
+    }
+
+    // Button click
+    button.addEventListener("click", performSearch);
+
+    // Enter key
+    input.addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        performSearch();
+      }
+    });
+
+    // Autocomplete logic
+    input.addEventListener("input", function () {
+      const query = input.value.toLowerCase();
+      suggestionsBox.innerHTML = "";
+
+      if (!query) return;
+
+      const matches = allTags.filter(tag =>
+        tag.toLowerCase().includes(query)
+      ).slice(0, 5); // limit suggestions
+
+      matches.forEach(tag => {
+        const li = document.createElement("li");
+        li.textContent = tag;
+        li.style.padding = "6px";
+        li.style.cursor = "pointer";
+
+        li.addEventListener("click", () => {
+          input.value = tag;
+          suggestionsBox.innerHTML = "";
+          input.focus();
+        });
+
+        suggestionsBox.appendChild(li);
+      });
+    });
+
+    // Hide suggestions when clicking outside
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest("div")) {
+        suggestionsBox.innerHTML = "";
+      }
+    });
+  </script>
+  </main>
+
+  <footer class="page-footer">
+    <p>
+      Emotes created by <a href="https://www.twitch.tv/gromfalloon" target="_blank" rel="noopener noreferrer">Gromfalloon</a> on Twitch, please <a href="/attribute">attribute</a> the emotes when you upload them. 
+    </p>
+  </footer>
+  </div>
 </body>
 </html>
 

@@ -10,6 +10,6 @@ If you want to commission a custom emote, please feel free to reach out on Twitc
 Enjoy!
 
 <a href="https://bsky.app/profile/gromfalloon.bsky.social" target="_blank" rel="noopener noreferrer"><img src="/socials/Bluesky_Logo.png" /></a> 
-<a href="https://x.com/Gromfalloon" target="_blank" rel="noopener noreferrer"><img src="/socials/x-logo-black.png" /></a> 
+<a href="https://x.com/Gromfalloon" target="_blank" rel="noopener noreferrer"><img src="/socials/x-logo-white.png" /></a> 
 <a href="https://www.twitch.tv/gromfalloon/" target="_blank" rel="noopener noreferrer"><img src="/socials/twitch-logo-purple.png" /></a> 
-<a href="https://patreon.com/gromfalloon" target="_blank" rel="noopener noreferrer"><img src="/socials/PATREON_Lockup_Horizontal_BLACK_RGB.png" /></a>
+<a href="https://patreon.com/gromfalloon" target="_blank" rel="noopener noreferrer"><img src="/socials/Patreon_logo.png" /></a>
