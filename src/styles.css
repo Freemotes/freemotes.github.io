@@ -171,8 +171,8 @@ input[type="text"] {
   .grid {
     grid-template-columns: repeat(auto-fit, minmax(112px, 1fr));
     gap: 5px;
+    margin: 0 auto;
   }
-
 
   .card,
   .card img {
