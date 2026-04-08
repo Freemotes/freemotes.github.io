@@ -143,8 +143,8 @@ input[type="text"] {
 
 /* card for each emote */
 .card {
-  width: 122px;
-  height: 122px;
+  width: 112px;
+  height: 112px;
   border-radius: 0px;
   display: flex;
   align-items: center;
@@ -164,6 +164,22 @@ input[type="text"] {
   width: 112px;
   height: 112px;
   border-radius: 0px;
+}
+
+/* 📱 Mobile: smaller tiles */
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(112px, 1fr));
+    gap: 5px;
+  }
+
+
+  .card,
+  .card img {
+    width: 112px;
+    height: 112px;
+  }
+
 }
 
 /* ✨ Links */
