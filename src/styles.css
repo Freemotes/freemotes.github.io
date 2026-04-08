@@ -33,6 +33,14 @@ main {
   margin: 0 auto;
 }
 
+/* 📱 Mobile */
+@media (max-width: 600px) {
+  main {
+    margin: 20px auto;
+    padding: 0 12px;
+  }
+}
+
 /* 🧭 Header */
 header {
   background-color: #320434;
@@ -143,6 +151,7 @@ input[type="text"] {
   justify-content: center;
   overflow: hidden; /* prevents overflow artifacts */
   transition: transform 0.15s ease, background 0.15s ease;
+  touch-action: manipulation;
 }
 
 /* Hover effect */
