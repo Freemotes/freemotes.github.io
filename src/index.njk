@@ -10,13 +10,19 @@ title: Free emotes
 
 {% set sortedEmotes = collections.emotes | sort(attribute="data.date") | reverse %}
 
-<div class="grid">
+<div class="grid" id="emoteGrid">
+  {% set sortedEmotes = collections.emotes | reverse %}
   {% for emote in sortedEmotes.slice(0, 5) %}
-    <div class="card">
-      <a href="{{ emote.url }}">
-        <img src="{{ emote.data.image }}" alt="{{ emote.data.title }}">
+    {% if emote.inputPath != "./src/emotes/index.md" %}
+      {% set tags = emote.data.tags or [] %}
+      <a
+        class="card"
+        href="{{ emote.url }}"
+        data-tags="{{ tags | join(' ') | lower }}"
+      >
+        <img src="{{ emote.data.image }}" alt="{{ emote.data.title }}" width="112" height="112">
       </a>
-    </div>
+    {% endif %}
   {% endfor %}
 </div>
 

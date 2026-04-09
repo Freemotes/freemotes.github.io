@@ -1,0 +1,63 @@
+---
+layout: layout.njk
+title: "Emotes"
+date: 2010-03-10
+---
+
+<div class="filters" style="margin-bottom: 1rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="static">Static</button>
+  <button class="filter-btn" data-filter="animated">Animated</button>
+</div>
+
+<div class="grid" id="emoteGrid">
+  {% set sortedEmotes = collections.emotes | reverse %}
+  {% for emote in sortedEmotes %}
+    {% if emote.inputPath != "./src/emotes/index.md" %}
+      {% set tags = emote.data.tags or [] %}
+      <a
+        class="card"
+        href="{{ emote.url }}"
+        data-tags="{{ tags | join(' ') | lower }}"
+      >
+        <img src="{{ emote.data.image }}" alt="{{ emote.data.title }}" width="112" height="112">
+      </a>
+    {% endif %}
+  {% endfor %}
+</div>
+
+<style>
+  .filter-btn {
+    background: #18181b;
+  }
+
+  .filter-btn.active {
+    background: #9146ff;
+  }
+</style>
+
+<script>
+  const buttons = document.querySelectorAll(".filter-btn");
+  const cards = document.querySelectorAll("#emoteGrid .card");
+
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      const selected = button.dataset.filter;
+
+      // Toggle active button
+      buttons.forEach(btn => btn.classList.remove("active"));
+      button.classList.add("active");
+
+      // Filter cards
+      cards.forEach(card => {
+        const tags = (card.dataset.tags || "").toLowerCase();
+
+        if (selected === "all") {
+          card.style.display = "";
+        } else {
+          card.style.display = tags.includes(selected) ? "" : "none";
+        }
+      });
+    });
+  });
+</script>
