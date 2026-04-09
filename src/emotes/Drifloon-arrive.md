@@ -3,7 +3,7 @@ layout: layout.njk
 title: "Ditto arrive"
 date: 2026-03-10
 tags: ["cartoon", "drifloon", "ditto", "pokemon", "animated", "balloon", "arrive"]
-description: "Woop."
+description: ""
 image: "/images/DittoArrive.gif"
 ---
 

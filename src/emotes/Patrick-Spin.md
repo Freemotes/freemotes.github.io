@@ -3,7 +3,7 @@ layout: layout.njk
 title: "Patrick spinning"
 date: 2026-03-23
 tags: ["cartoon", "spongebob", "patrick", "yellow", "animated"]
-description: "Woop."
+description: ""
 image: "/images/1-PatrickSpin-112.gif"
 ---
 

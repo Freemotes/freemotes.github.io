@@ -15,7 +15,7 @@ html {
   flex-direction: column;
 }
 
-/* 🌌 Base layout */
+/* Base layout */
 body {
   box-sizing: border-box;
   height: 100%;
@@ -33,7 +33,7 @@ main {
   margin: 0 auto;
 }
 
-/* 📱 Mobile */
+/* Mobile */
 @media (max-width: 600px) {
   main {
     margin: 20px auto;
@@ -41,13 +41,11 @@ main {
   }
 }
 
-/* 🧭 Header */
 header {
   background-color: #320434;
   padding: 15px 20px;
 }
 
-/* 🧾 Footer */
 footer {
   background-color: #320434;
   text-align: center;
@@ -56,6 +54,7 @@ footer {
   color: #adadb8;
 }
 
+/* sticky footer */
 .page-header,
 .page-footer {
   padding: 20px;
@@ -65,10 +64,10 @@ footer {
 
 .page-body {
   padding: 20px;
-
   flex-grow: 1;
 }
 
+/* navigation */
 nav ul {
   display: flex;
   justify-content: center;
@@ -86,12 +85,6 @@ nav a {
 
 nav a:hover {
   color: #ffffff;
-}
-
-/* 🖼 Images */
-img {
-  border-radius: 0px;
-  margin: 20px 0;
 }
 
 /* 🔘 Buttons */
@@ -121,24 +114,10 @@ input[type="text"] {
   box-sizing: border-box;
 }
 
-/* grid for the emotes page */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, 112px);
   gap: 16px;
-}
-
-.grid-item {
-  display: flex;
-  flex-direction: column; /* Stacks image and caption vertically */
-  align-items: center;    /* Centers items horizontally */
-  text-align: center;
-  font-size: 20px;   /* Changes the text size */
-}
-
-.grid-item a {
-    font-size: 20px;     /* Adjust the size (px, em, rem, or %) */
-    text-decoration: none; /* Optional: removes the default underline */
 }
 
 /* card for each emote */
@@ -164,6 +143,22 @@ input[type="text"] {
   width: 112px;
   height: 112px;
   border-radius: 0px;
+}
+
+.card.hidden {
+  display: none;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column; /* Stacks image and caption vertically */
+  align-items: center;    /* Centers items horizontally */
+  text-align: center;
+  font-size: 20px;
+}
+
+.grid-item a {
+    text-decoration: none; /* removes the default underline */
 }
 
 /* 📱 Mobile: smaller tiles */

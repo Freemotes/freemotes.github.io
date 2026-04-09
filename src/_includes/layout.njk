@@ -87,78 +87,122 @@
   </div>
 
   <script>
-    const input = document.getElementById("searchInput");
-    const button = document.getElementById("searchButton");
-    const suggestionsBox = document.getElementById("suggestions");
+  const input = document.getElementById("searchInput");
+  const button = document.getElementById("searchButton");
+  const suggestionsBox = document.getElementById("suggestions");
+  const searchWrap = document.getElementById("searchWrap");
 
-    let allTags = [];
+  let allTags = [];
 
-    // Load tags from search.json
-    fetch("/search.json")
-      .then(res => res.json())
-      .then(data => {
-        const tagSet = new Set();
+  // Load tags from search.json
+  fetch("/search.json")
+    .then(res => res.json())
+    .then(data => {
+      const tagSet = new Set();
 
-        data.forEach(item => {
-          if (item.tags && Array.isArray(item.tags)) {
-            item.tags.forEach(tag => tagSet.add(tag));
-          }
-        });
-
-        allTags = Array.from(tagSet);
+      data.forEach(item => {
+        if (Array.isArray(item.tags)) {
+          item.tags.forEach(tag => {
+            const clean = String(tag).trim().toLowerCase();
+            if (clean) tagSet.add(clean);
+          });
+        }
       });
 
-    function performSearch() {
-      const query = input.value.trim();
-      if (query) {
-        window.location.href = `/search/?q=${encodeURIComponent(query)}`;
-      }
+      allTags = Array.from(tagSet).sort();
+    })
+    .catch(err => {
+      console.error("Failed to load tags:", err);
+    });
+
+  function performSearch() {
+    const query = input.value.trim();
+    if (query) {
+      window.location.href = `/search/?q=${encodeURIComponent(query)}`;
+    }
+  }
+
+  function clearSuggestions() {
+    suggestionsBox.innerHTML = "";
+    suggestionsBox.style.display = "none";
+  }
+
+  function showSuggestions(matches) {
+    suggestionsBox.innerHTML = "";
+
+    if (!matches.length) {
+      suggestionsBox.style.display = "none";
+      return;
     }
 
-    // Button click
-    button.addEventListener("click", performSearch);
+    matches.forEach(tag => {
+      const li = document.createElement("li");
+      li.textContent = tag;
+      li.style.padding = "6px";
+      li.style.cursor = "pointer";
 
-    // Enter key
-    input.addEventListener("keydown", function (event) {
-      if (event.key === "Enter") {
-        performSearch();
-      }
-    });
-
-    // Autocomplete logic
-    input.addEventListener("input", function () {
-      const query = input.value.toLowerCase();
-      suggestionsBox.innerHTML = "";
-
-      if (!query) return;
-
-      const matches = allTags.filter(tag =>
-        tag.toLowerCase().includes(query)
-      ).slice(0, 5); // limit suggestions
-
-      matches.forEach(tag => {
-        const li = document.createElement("li");
-        li.textContent = tag;
-        li.style.padding = "6px";
-        li.style.cursor = "pointer";
-
-        li.addEventListener("click", () => {
-          input.value = tag;
-          suggestionsBox.innerHTML = "";
-          input.focus();
-        });
-
-        suggestionsBox.appendChild(li);
+      li.addEventListener("mouseenter", () => {
+        li.style.background = "#27272a";
       });
+
+      li.addEventListener("mouseleave", () => {
+        li.style.background = "transparent";
+      });
+
+      li.addEventListener("click", () => {
+        input.value = tag;
+        clearSuggestions();
+        input.focus();
+      });
+
+      suggestionsBox.appendChild(li);
     });
 
-    // Hide suggestions when clicking outside
-    document.addEventListener("click", (e) => {
-      if (!e.target.closest("div")) {
-        suggestionsBox.innerHTML = "";
+    suggestionsBox.style.display = "block";
+  }
+
+  // Button click
+  button.addEventListener("click", performSearch);
+
+  // Enter key
+  input.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+      performSearch();
+    }
+  });
+
+  // Autocomplete logic (TAGS ONLY)
+  input.addEventListener("input", function () {
+    const query = input.value.trim().toLowerCase();
+
+    if (!query) {
+      clearSuggestions();
+      return;
+    }
+
+    const startsWith = [];
+    const contains = [];
+
+    for (const tag of allTags) {
+      if (tag.startsWith(query)) {
+        startsWith.push(tag);
+      } else if (tag.includes(query)) {
+        contains.push(tag);
       }
-    });
-  </script>
+
+      if (startsWith.length + contains.length >= 5) break;
+    }
+
+    showSuggestions([...startsWith, ...contains].slice(0, 5));
+  });
+
+  // Hide suggestions when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!searchWrap.contains(e.target)) {
+      clearSuggestions();
+    }
+  });
+</script>
   </main>
 
   <footer class="page-footer">

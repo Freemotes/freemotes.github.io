@@ -6,11 +6,16 @@ eleventyExcludeFromCollections: true
 [
 {% for item in collections.emotes %}
 {
-  "title": "{{ item.data.title }}",
-  "tags": {{ item.data.tags | dump | safe }},
-  "description": "{{ item.data.description }}",
-  "url": "{{ item.url }}",
-  "image": "{{ item.data.image }}"
+  "title": {{ (item.data.title or "") | dump | safe }},
+  "tags": {{ (item.data.tags or []) | dump | safe }},
+  "description": {{ (item.data.description or "") | dump | safe }},
+  "url": {{ item.url | dump | safe }},
+  "image": {{ (item.data.image or "") | dump | safe }},
+  "search": {{ (
+    ((item.data.title or "") ~ " ") ~
+    (((item.data.tags or []) | join(" ")) ~ " ") ~
+    (item.data.description or "")
+  ) | lower | dump | safe }}
 }{% if not loop.last %},{% endif %}
 {% endfor %}
 ]

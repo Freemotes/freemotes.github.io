@@ -8,31 +8,26 @@ permalink: /search/
 
 <script>
 async function loadSearch() {
-  
-const params = new URLSearchParams(window.location.search);
-const query = params.get("q") || "";
+  const params = new URLSearchParams(window.location.search);
+  const query = params.get("q") || "";
+  const lowerQuery = query.trim().toLowerCase();
 
-// 👇 grab the existing <h1> from layout
-const titleEl = document.querySelector("h1");
+  const titleEl = document.querySelector("h1");
+  if (query && titleEl) {
+    titleEl.textContent = `Search Results for "${query}"`;
+  }
 
-if (query && titleEl) {
-  titleEl.textContent = `Search Results for "${query}"`;
-}
+  const container = document.getElementById("results");
+
+  if (!lowerQuery) {
+    container.innerHTML = "<p>Please enter a search term.</p>";
+    return;
+  }
 
   const res = await fetch("/search.json");
   const data = await res.json();
 
-  const lowerQuery = query.toLowerCase();
-
-  const results = data.filter(item => {
-    return (
-      item.title.toLowerCase().includes(lowerQuery) ||
-      (item.tags && item.tags.join(" ").toLowerCase().includes(lowerQuery)) ||
-      (item.description && item.description.toLowerCase().includes(lowerQuery))
-    );
-  });
-
-  const container = document.getElementById("results");
+  const results = data.filter(item => item.search.includes(lowerQuery));
 
   if (results.length === 0) {
     container.innerHTML = `<p>No results found for "${query}"</p>`;
@@ -43,7 +38,7 @@ if (query && titleEl) {
     <div class="grid">
       ${results.map(item => `
         <a class="card" href="${item.url}">
-          <img src="${item.image}" alt="${item.title}" width="112" height="112">
+          <img src="${item.image}" alt="${item.title}" width="112" height="112" loading="lazy">
         </a>
       `).join("")}
     </div>
