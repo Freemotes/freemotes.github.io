@@ -6,9 +6,9 @@ title: "Attributing emotes"
 Attributing images to their creator spreads awareness, plus we get to see an ever-growing list of people using our emotes, which is awesome. This is how you do it!
 
 <details>
-<summary>Attributing a new emote</summary>
+<summary><h3></h3>Attributing a new emote</h3></summary>
 
-<img src="/info/attribute1.png" width="122" height="134"> />
+<a href="/info/attribute1.png"><img src="/info/attribute1.png" width="122" height="134"></a>
 
 1. Go to Viewer Rewards > <a href="https://dashboard.twitch.tv/viewer-rewards/emotes" target="_blank" rel="noopener noreferrer">Emotes</a> in your dashboard on Twitch.
 2. In the top-right corner, select Upload New.
@@ -18,9 +18,9 @@ Attributing images to their creator spreads awareness, plus we get to see an eve
 </details>
 
 <details>
-<summary>Attributing an existing emote</summary>
+<summary><h3></h3>Attributing an existing emote</h3></summary>
 
-<img src="/info/attribute2.png" width="122" height="259"> />
+<a href="/info/attribute2.png"><img src="/info/attribute2.png" width="122" height="259"> /></a>
 
 1. Go to Viewer Rewards > <a href="https://dashboard.twitch.tv/viewer-rewards/emotes" target="_blank" rel="noopener noreferrer">Emotes</a> in your dashboard on Twitch.
 2. Select the emote you wish to attribute on the right side of the screen.
