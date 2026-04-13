@@ -7,6 +7,8 @@ Attributing images to their creator spreads awareness, plus we get to see an eve
 
 <h2>Attributing a new emote</h2>
 
+<img src="/info/attribute1.png" />
+
 1. Go to Viewer Rewards > <a href="https://dashboard.twitch.tv/viewer-rewards/emotes" target="_blank" rel="noopener noreferrer">Emotes</a> in your dashboard on Twitch.
 2. In the top-right corner, select Upload New.
 3. Upload the image and give it a name.
@@ -14,6 +16,8 @@ Attributing images to their creator spreads awareness, plus we get to see an eve
 5. Please enter "Gromfalloon" as the artist.
 
 <h2>Attributing an existing emote</h2>
+
+<img src="/info/attribute2.png" />
 
 1. Go to Viewer Rewards > <a href="https://dashboard.twitch.tv/viewer-rewards/emotes" target="_blank" rel="noopener noreferrer">Emotes</a> in your dashboard on Twitch.
 2. Select the emote you wish to attribute on the right side of the screen.
