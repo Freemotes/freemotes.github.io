@@ -6,7 +6,7 @@ title: "Attributing emotes"
 Attributing images to their creator spreads awareness, plus we get to see an ever-growing list of people using our emotes, which is awesome. Select the option below that applies to you!
 
 <details>
-<summary>I want to attribute a new emote</summary>
+<summary><h2 style="display:inline-block">I want to attribute a new emote</h2></summary>
 
 <a href="/info/attribute1.png"><img src="/info/attribute1.png" width="122" height="134"></a>
 
@@ -18,7 +18,7 @@ Attributing images to their creator spreads awareness, plus we get to see an eve
 </details>
 
 <details>
-<summary>I want to attribute an existing emote</summary>
+<summary><h5 style="display:inline-block">I want to attribute an existing emote</h5></summary>
 
 <a href="/info/attribute2.png"><img src="/info/attribute2.png" width="122" height="259"> /></a>
 
