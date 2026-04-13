@@ -4,6 +4,7 @@ module.exports = function (eleventyConfig) {
   });
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy("src/socials");
+  eleventyConfig.addPassthroughCopy("src/info");
   eleventyConfig.addPassthroughCopy("src/styles.css");
 
   return {
