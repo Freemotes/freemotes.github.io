@@ -18,7 +18,7 @@ Attributing images to their creator spreads awareness, plus we get to see an eve
 </details>
 
 <details>
-<summary><h5 style="display:inline-block">I want to attribute an existing emote</h5></summary>
+<summary><h2 style="display:inline-block">I want to attribute an existing emote</h2></summary>
 
 <a href="/info/attribute2.png"><img src="/info/attribute2.png" width="122" height="259"> /></a>
 
