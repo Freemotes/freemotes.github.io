@@ -5,7 +5,8 @@ title: "Attributing emotes"
 
 Attributing images to their creator spreads awareness, plus we get to see an ever-growing list of people using our emotes, which is awesome. This is how you do it!
 
-<h2>Attributing a new emote</h2>
+<details>
+<summary><h2>Attributing a new emote</h2></summary>
 
 <img src="/info/attribute1.png" />
 
@@ -14,8 +15,10 @@ Attributing images to their creator spreads awareness, plus we get to see an eve
 3. Upload the image and give it a name.
 4. At the very bottom of the page, you'll find <i>Emote Attribution</i>. You may have to scroll down to see it.
 5. Please enter "Gromfalloon" as the artist.
+</details>
 
-<h2>Attributing an existing emote</h2>
+<details>
+<summary><h2>Attributing an existing emote</h2></summary>
 
 <img src="/info/attribute2.png" />
 
@@ -23,5 +26,6 @@ Attributing images to their creator spreads awareness, plus we get to see an eve
 2. Select the emote you wish to attribute on the right side of the screen.
 3. In the bottom-right corner, you'll find <i>Emote Attribution</i>. 
 5. Please enter "Gromfalloon" as the artist.
+</details>
 
 Thank you, this helps me a lot!
