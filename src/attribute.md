@@ -3,10 +3,10 @@ layout: layout.njk
 title: "Attributing emotes"
 ---
 
-Attributing images to their creator spreads awareness, plus we get to see an ever-growing list of people using our emotes, which is awesome. This is how you do it!
+Attributing images to their creator spreads awareness, plus we get to see an ever-growing list of people using our emotes, which is awesome. Select the option below that applies to you!
 
 <details>
-<summary><h3>Attributing a new emote</h3></summary>
+<summary>I want to attribute a new emote</summary>
 
 <a href="/info/attribute1.png"><img src="/info/attribute1.png" width="122" height="134"></a>
 
@@ -18,7 +18,7 @@ Attributing images to their creator spreads awareness, plus we get to see an eve
 </details>
 
 <details>
-<summary><h3>Attributing an existing emote</h3></summary>
+<summary>I want to attribute an existing emote</summary>
 
 <a href="/info/attribute2.png"><img src="/info/attribute2.png" width="122" height="259"> /></a>
 
