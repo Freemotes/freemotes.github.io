@@ -40,5 +40,5 @@ Everything helps a lot and keeps me making more and more, but never feel obligat
 <a href="https://bsky.app/profile/gromfalloon.bsky.social" target="_blank" rel="noopener noreferrer"><img src="/socials/Bluesky_Logo.png" /></a> 
 <a href="https://x.com/Gromfalloon" target="_blank" rel="noopener noreferrer"><img src="/socials/x-logo-white.png" /></a> 
 <a href="https://patreon.com/gromfalloon" target="_blank" rel="noopener noreferrer"><img src="/socials/Patreon_logo.png" /></a>
-<a href="https://www.paypal.com/paypalme/gromfalloon" target="_blank" rel="noopener noreferrer"><img src="/socials/paypal.png" /></a> 
-<a href="https://ko-fi.com/gromfalloon" target="_blank" rel="noopener noreferrer"><img src="/socials/kofi_logo.png" /></a> 
+<a href="https://www.paypal.com/paypalme/gromfalloon" target="_blank" rel="noopener noreferrer"><img src="/socials/PayPal.png" /></a> 
+<a href="https://ko-fi.com/gromfalloon" target="_blank" rel="noopener noreferrer"><img src="/socials/Kofi_Logo.png" /></a> 
