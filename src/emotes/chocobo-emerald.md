@@ -7,6 +7,9 @@ description: ""
 image: "/images/chocobo-emerald-112.gif"
 image_56: ""
 image_28: ""
+variation_group: "chocobo"
+variation_label: "Emerald"
+variation_icon: "/images/chocobo-variations-112.gif"
 ---
 
 <p>

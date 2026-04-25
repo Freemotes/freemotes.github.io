@@ -12,16 +12,41 @@ date: 2010-03-10
 
 <div class="grid" id="emoteGrid">
   {% set sortedEmotes = collections.emotes | reverse %}
+  {% set shownVariationGroups = [] %}
+
   {% for emote in sortedEmotes %}
     {% if emote.inputPath != "./src/emotes/index.md" %}
       {% set tags = emote.data.tags or [] %}
-      <a
-        class="card"
-        href="{{ emote.url }}"
-        data-tags="{{ tags | join(' ') | lower }}"
-      >
-        <img src="{{ emote.data.image }}" alt="{{ emote.data.title }}" width="112" height="112">
-      </a>
+
+      {% if emote.data.variation_group %}
+        {% if emote.data.variation_group not in shownVariationGroups %}
+          {% set shownVariationGroups = shownVariationGroups.concat([emote.data.variation_group]) %}
+
+          <a
+            class="card variation-card"
+            href="/emotes/variations/{{ emote.data.variation_group }}/"
+            data-tags="{{ tags | join(' ') | lower }}"
+            title="This emote has alternative color variations available"
+          >
+            <img
+              loading="lazy"
+              src="{{ emote.data.variation_icon or emote.data.image }}"
+              alt="{{ emote.data.variation_group }} variations"
+            >
+            <span class="variation-badge">🎨</span>
+          </a>
+        {% endif %}
+
+      {% else %}
+        <a
+          class="card"
+          href="{{ emote.url }}"
+          data-tags="{{ tags | join(' ') | lower }}"
+        >
+          <img loading="lazy" src="{{ emote.data.image }}" alt="{{ emote.data.title }}">
+        </a>
+      {% endif %}
+
     {% endif %}
   {% endfor %}
 </div>

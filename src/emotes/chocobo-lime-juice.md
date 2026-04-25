@@ -7,6 +7,9 @@ description: ""
 image: "/images/chocobo-lime-juice-112.gif"
 image_56: ""
 image_28: ""
+variation_group: "chocobo"
+variation_label: "Lime juice"
+variation_icon: "/images/chocobo-variations-112.gif"
 ---
 
 <p>

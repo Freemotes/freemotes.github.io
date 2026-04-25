@@ -7,6 +7,9 @@ description: ""
 image: "/images/chocobo-lavender-112.gif"
 image_56: ""
 image_28: ""
+variation_group: "chocobo"
+variation_label: "Lavender"
+variation_icon: "/images/chocobo-variations-112.gif"
 ---
 
 <p>

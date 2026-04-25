@@ -47,3 +47,59 @@ title: Welcome in!
       </a>
     </figure>
   </div>
+  
+
+<h2>Emotes with variations</h2>
+  <div class="variation-grid">
+  {% set sortedEmotes = collections.emotes | reverse %}
+  {% set shownVariationGroups = [] %}
+
+  {% for emote in sortedEmotes %}
+    {% if emote.data.variation_group %}
+      {% if emote.data.variation_group not in shownVariationGroups %}
+        {% set shownVariationGroups = shownVariationGroups.concat([emote.data.variation_group]) %}
+
+        <a
+          class="variation-preview-card"
+          href="/emotes/variations/{{ emote.data.variation_group }}/"
+          title="View {{ emote.data.variation_group }} color variations"
+        >
+          <img
+            loading="lazy"
+            src="{{ emote.data.variation_page_icon or emote.data.variation_icon or emote.data.image }}"
+            alt="{{ emote.data.variation_group }} color variations"
+          >
+        </a>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+</div>
+
+<style>
+  .variation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 220px));
+    gap: 1rem;
+    justify-content: left;
+    align-items: start;
+  }
+
+  .variation-preview-card {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    border-radius: 10px;
+    padding: 0.75rem;
+    text-decoration: none;
+  }
+
+  .variation-preview-card img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .variation-preview-card:hover {
+    transform: scale(1.03);
+  }
+</style>

@@ -1,18 +1,18 @@
 ---
 layout: layout.njk
-title: "Chocobo - sapphire"
-date: 2024-08-16
-tags: ["chocobo","finalfantasy","bird","griddy","goose","animated"]
+title: "chocobo - lime"
+date: 2026-04-25
+tags: ["chocobo","finalfantasy","griddy","goose","animated"]
 description: ""
-image: "/images/chocobo-sapphire-112.gif"
+image: "/images/chocobo-lime-112.gif"
 image_56: ""
 image_28: ""
 variation_group: "chocobo"
-variation_label: "Sapphire"
+variation_label: "lime"
 variation_icon: "/images/chocobo-variations-112.gif"
+variation_page_icon: "/images/Chocobo-Variations2.gif"
 ---
 
 <p>
   <button onclick="downloadEmote()">Download Emote</button>
 </p>
-

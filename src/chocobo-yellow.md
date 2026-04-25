@@ -1,7 +1,7 @@
 ---
 layout: layout.njk
-title: "Chocobo - yellow"
-date: 2024-08-16
+title: "chocobo - yellow"
+date: 2026-04-25
 tags: ["chocobo","finalfantasy","griddy","goose","animated"]
 description: ""
 image: "/images/chocobo-yellow-112.gif"
