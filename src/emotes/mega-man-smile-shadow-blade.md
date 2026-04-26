@@ -2,7 +2,7 @@
 layout: layout.njk
 title: "Mega Man Smile - Shadow Blade"
 date: 2026-04-26
-tags: ["mega-man-smile","happy","smile","spongebob","megaman3","static"]
+tags: ["happy","smile","megaman","megaman3","static"]
 description: ""
 image: "/images/MegaManSmile-ShadowBlade-112.png"
 image_56: "/images/MegaManSmile-ShadowBlade-56.png"

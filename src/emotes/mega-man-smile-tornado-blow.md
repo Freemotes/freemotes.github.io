@@ -2,7 +2,7 @@
 layout: layout.njk
 title: "Mega Man Smile - Tornado Blow"
 date: 2026-04-26
-tags: ["mega-man-smile","happy","smile","spongebob","megaman9","static"]
+tags: ["happy","smile","megaman","megaman9","static"]
 description: ""
 image: "/images/MegaManSmile-TornadoBlow-112.png"
 image_56: "/images/MegaManSmile-TornadoBlow-56.png"

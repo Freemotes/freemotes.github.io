@@ -2,7 +2,7 @@
 layout: layout.njk
 title: "Mega Man Smile - Thunder Wool"
 date: 2026-04-26
-tags: ["mega-man-smile","happy","smile","spongebob","megaman10","static"]
+tags: ["happy","smile","megaman","megaman10","static"]
 description: ""
 image: "/images/MegaManSmile-ThunderWool-112.png"
 image_56: "/images/MegaManSmile-ThunderWool-56.png"

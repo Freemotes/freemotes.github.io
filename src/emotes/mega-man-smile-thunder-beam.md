@@ -2,7 +2,7 @@
 layout: layout.njk
 title: "Mega Man Smile - Thunder Beam"
 date: 2026-04-26
-tags: ["mega-man-smile","megaman","megaman1","static"]
+tags: ["happy","smile","megaman","megaman1","static"]
 description: ""
 image: "/images/MegaManSmile-ThunderBeam-112.png"
 image_56: "/images/MegaManSmile-ThunderBeam-56.png"

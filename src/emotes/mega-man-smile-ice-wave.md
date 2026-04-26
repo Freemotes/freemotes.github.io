@@ -2,7 +2,7 @@
 layout: layout.njk
 title: "Mega Man Smile - Ice Wave"
 date: 2026-04-26
-tags: ["mega-man-smile","happy","smile","spongebob","megaman8","static"]
+tags: ["happy","smile","megaman","megaman8","static"]
 description: ""
 image: "/images/MegaManSmile-IceWave-112.png"
 image_56: "/images/MegaManSmile-IceWave-56.png"

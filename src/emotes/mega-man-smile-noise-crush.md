@@ -2,7 +2,7 @@
 layout: layout.njk
 title: "Mega Man Smile - Noise Crush"
 date: 2026-04-26
-tags: ["mega-man-smile","happy","smile","spongebob","megaman7","static"]
+tags: ["happy","smile","megaman","megaman7","static"]
 description: ""
 image: "/images/MegaManSmile-NoiseCrush-112.png"
 image_56: "/images/MegaManSmile-NoiseCrush-56.png"

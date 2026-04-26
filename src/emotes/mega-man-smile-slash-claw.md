@@ -2,7 +2,7 @@
 layout: layout.njk
 title: "Mega Man Smile - Slash Claw"
 date: 2026-04-26
-tags: ["mega-man-smile","happy","smile","spongebob","megaman7","static"]
+tags: ["happy","smile","megaman","megaman7","static"]
 description: ""
 image: "/images/MegaManSmile-SlashClaw-112.png"
 image_56: "/images/MegaManSmile-SlashClaw-56.png"

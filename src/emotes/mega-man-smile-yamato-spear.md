@@ -2,7 +2,7 @@
 layout: layout.njk
 title: "Mega Man Smile - Yamato Spear"
 date: 2026-04-26
-tags: ["mega-man-smile","happy","smile","spongebob","megaman6","static"]
+tags: ["happy","smile","megaman","megaman6","static"]
 description: ""
 image: "/images/MegaManSmile-YamatoSpear-112.png"
 image_56: "/images/MegaManSmile-YamatoSpear-56.png"

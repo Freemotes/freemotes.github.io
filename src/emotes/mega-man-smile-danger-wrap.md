@@ -2,7 +2,7 @@
 layout: layout.njk
 title: "Mega Man Smile - Danger Wrap"
 date: 2026-04-26
-tags: ["mega-man-smile","happy","smile","spongebob","megaman7","static"]
+tags: ["happy","smile","megaman","megaman7","static"]
 description: ""
 image: "/images/MegaManSmile-DangerWrap-112.png"
 image_56: "/images/MegaManSmile-DangerWrap-56.png"

@@ -2,7 +2,7 @@
 layout: layout.njk
 title: "Mega Man Smile - Item 1-2-3"
 date: 2026-04-26
-tags: ["mega-man-smile","happy","smile","megaman","megaman2","static"]
+tags: ["happy","smile","megaman","megaman2","static"]
 description: ""
 image: "/images/MegaManSmile-Item123-112.png"
 image_56: "/images/MegaManSmile-Item123-56.png"

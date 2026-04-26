@@ -2,7 +2,7 @@
 layout: layout.njk
 title: "Mega Man Smile - Ice Slasher"
 date: 2026-04-26
-tags: ["mega-man-smile","megaman","megaman1","static"]
+tags: ["happy","smile","megaman","megaman1","static"]
 description: ""
 image: "/images/MegaManSmile-IceSlasher-112.png"
 image_56: "/images/MegaManSmile-IceSlasher-56.png"

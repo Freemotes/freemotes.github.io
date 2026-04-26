@@ -2,7 +2,7 @@
 layout: layout.njk
 title: "Mega Man Smile - Commando Bomb"
 date: 2026-04-26
-tags: ["mega-man-smile","happy","smile","spongebob","megaman10","static"]
+tags: ["happy","smile","megaman","megaman10","static"]
 description: ""
 image: "/images/MegaManSmile-CommandoBomb-112.png"
 image_56: "/images/MegaManSmile-CommandoBomb-56.png"

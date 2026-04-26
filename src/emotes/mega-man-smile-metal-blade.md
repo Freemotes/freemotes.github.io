@@ -2,7 +2,7 @@
 layout: layout.njk
 title: "Mega Man Smile - Metal Blade"
 date: 2026-04-26
-tags: ["mega-man-smile","happy","smile","megaman","megaman2","static"]
+tags: ["happy","smile","megaman","megaman2","static"]
 description: ""
 image: "/images/MegaManSmile-MetalBlade-112.png"
 image_56: "/images/MegaManSmile-MetalBlade-56.png"

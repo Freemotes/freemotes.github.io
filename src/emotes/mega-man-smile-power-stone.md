@@ -2,7 +2,7 @@
 layout: layout.njk
 title: "Mega Man Smile - Power Stone"
 date: 2026-04-26
-tags: ["mega-man-smile","happy","smile","spongebob","megaman5","static"]
+tags: ["happy","smile","megaman","megaman5","static"]
 description: ""
 image: "/images/MegaManSmile-PowerStone-112.png"
 image_56: "/images/MegaManSmile-PowerStone-56.png"

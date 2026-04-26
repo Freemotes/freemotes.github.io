@@ -2,7 +2,7 @@
 layout: layout.njk
 title: "Mega Man Smile - Napalm Bomb"
 date: 2026-04-26
-tags: ["mega-man-smile","happy","smile","spongebob","megaman5","static"]
+tags: ["happy","smile","megaman","megaman5","static"]
 description: ""
 image: "/images/MegaManSmile-NapalmBomb-112.png"
 image_56: "/images/MegaManSmile-NapalmBomb-56.png"

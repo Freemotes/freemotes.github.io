@@ -2,7 +2,7 @@
 layout: layout.njk
 title: "Mega Man Smile - Wave Burner"
 date: 2026-04-26
-tags: ["mega-man-smile","happy","smile","spongebob","megamanrf","static"]
+tags: ["happy","smile","megaman","megamanrf","static"]
 description: ""
 image: "/images/MegaManSmile-WaveBurner-112.png"
 image_56: "/images/MegaManSmile-WaveBurner-56.png"

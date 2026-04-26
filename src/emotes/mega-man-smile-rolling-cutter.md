@@ -2,7 +2,7 @@
 layout: layout.njk
 title: "Mega Man Smile - Rolling Cutter"
 date: 2026-04-26
-tags: ["mega-man-smile","megaman","megaman1","static"]
+tags: ["happy","smile","megaman","megaman1","static"]
 description: ""
 image: "/images/MegaManSmile-RollingCutter-112.png"
 image_56: "/images/MegaManSmile-RollingCutter-56.png"

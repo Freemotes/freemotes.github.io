@@ -2,7 +2,7 @@
 layout: layout.njk
 title: "Mega Man Smile - Rebound Striker"
 date: 2026-04-26
-tags: ["mega-man-smile","happy","smile","spongebob","megaman10","static"]
+tags: ["happy","smile","megaman","megaman10","static"]
 description: ""
 image: "/images/MegaManSmile-ReboundStriker-112.png"
 image_56: "/images/MegaManSmile-ReboundStriker-56.png"

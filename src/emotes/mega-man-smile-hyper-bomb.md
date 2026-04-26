@@ -2,7 +2,7 @@
 layout: layout.njk
 title: "Mega Man Smile - Hyper Bomb"
 date: 2026-04-26
-tags: ["mega-man-smile","megaman","megaman1","static"]
+tags: ["happy","smile","megaman","megaman1","static"]
 description: ""
 image: "/images/MegaManSmile-HyperBomb-112.png"
 image_56: "/images/MegaManSmile-HyperBomb-56.png"

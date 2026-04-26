@@ -2,7 +2,7 @@
 layout: layout.njk
 title: "Mega Man Smile - Black Hole Bomb"
 date: 2026-04-26
-tags: ["mega-man-smile","happy","smile","spongebob","megaman9","static"]
+tags: ["happy","smile","megaman","megaman9","static"]
 description: ""
 image: "/images/MegaManSmile-BlackHoleBomb-112.png"
 image_56: "/images/MegaManSmile-BlackHoleBomb-56.png"

@@ -2,7 +2,7 @@
 layout: layout.njk
 title: "Mega Man Smile - Lightning Bolt"
 date: 2026-04-26
-tags: ["mega-man-smile","happy","smile","spongebob","megamanrf","static"]
+tags: ["happy","smile","megaman","megamanrf","static"]
 description: ""
 image: "/images/MegaManSmile-LightningBolt-112.png"
 image_56: "/images/MegaManSmile-LightningBolt-56.png"

@@ -2,7 +2,7 @@
 layout: layout.njk
 title: "Mega Man Smile - Buster"
 date: 2026-04-26
-tags: ["mega-man-smile","happy","smile","spongebob","megamantop","static"]
+tags: ["happy","smile","megaman","megamantop","static"]
 description: ""
 image: "/images/MegaManSmile-Buster-112.png"
 image_56: "/images/MegaManSmile-Buster-56.png"
