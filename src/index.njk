@@ -5,7 +5,7 @@ title: Ahoy!
 
 <p>Welcome to FREEMOTES, the home of free emotes for everyone to use on Twitch. These have all been created by <a href="https://www.twitch.tv/gromfalloon/" target="_blank" rel="noopener noreferrer">me</a> to share with the world. I want people having fun emotes to use, regardless of budget. The world is better with art in it!</p>
 
-If you'd like to <a href="/support.md">support</a>, here are some quick (and optional!) ways:
+If you'd like to <a href="/support">support</a>, here are some quick (and optional!) ways:
 
 <br />
 <br />
@@ -15,6 +15,9 @@ If you'd like to <a href="/support.md">support</a>, here are some quick (and opt
 <a href="https://patreon.com/gromfalloon" target="_blank" rel="noopener noreferrer"><img src="/socials/Patreon_logo.png" /></a>
 <a href="https://www.paypal.com/paypalme/gromfalloon" target="_blank" rel="noopener noreferrer"><img src="/socials/PayPal.png" /></a> 
 <a href="https://ko-fi.com/gromfalloon" target="_blank" rel="noopener noreferrer"><img src="/socials/Kofi_Logo.png" /></a> 
+
+<h2><a href="/emotes">ALL EMOTES</a></h2>
+
 <h2>Recent ✨</h2>
 
 
@@ -22,7 +25,7 @@ If you'd like to <a href="/support.md">support</a>, here are some quick (and opt
 
 <div class="grid" id="emoteGrid">
   {% set sortedEmotes = collections.emotes | reverse %}
-  {% for emote in sortedEmotes.slice(0, 5) %}
+  {% for emote in sortedEmotes.slice(0, 12) %}
     {% if emote.inputPath != "./src/emotes/index.md" %}
       {% set tags = emote.data.tags or [] %}
       <a
