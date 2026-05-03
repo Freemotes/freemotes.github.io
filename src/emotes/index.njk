@@ -3,9 +3,13 @@ layout: layout.njk
 title: "Emotes"
 date: 2010-03-10
 ---
+Looking for some emotes to spruce up your stream? The below emotes are all free to use in your channel.<br>
+Some emotes are available in a variety of colors. Check them out! They are indicated by the following icon:<br><br>
+<img src="/info/variationindicator.png" alt="This emote has alternative color variations available"><br><br>
+What type of emote are you looking for?<br><br>
 
 <div class="filters" style="margin-bottom: 1rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
-  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn active" data-filter="all">Any</button>
   <button class="filter-btn" data-filter="static">Static</button>
   <button class="filter-btn" data-filter="animated">Animated</button>
 </div>
@@ -33,7 +37,11 @@ date: 2010-03-10
               src="{{ emote.data.variation_icon or emote.data.image }}"
               alt="{{ emote.data.variation_group }} variations"
             >
-            <span class="variation-badge">🎨</span>
+            <img
+              class="variation-badge"
+              src="/info/variationindicator.png"
+              alt="This emote has alternative color variations available"
+            >
           </a>
         {% endif %}
 

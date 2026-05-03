@@ -145,6 +145,11 @@ input[type="text"] {
   border-radius: 0px;
 }
 
+.card img.variation-badge {
+  width: 32px;
+  height: 32px;
+}
+
 .card.hidden {
   display: none;
 }
@@ -170,7 +175,7 @@ input[type="text"] {
   }
 
   .card,
-  .card img {
+  .card > img:not(.variation-badge) {
     width: 112px;
     height: 112px;
   }
@@ -197,17 +202,17 @@ a:hover {
 }
 
 /*color variations*/
+
 .variation-card {
   position: relative;
 }
 
 .variation-badge {
   position: absolute;
-  right: 6px;
   bottom: 6px;
-  background: #18181b;
-  color: white;
-  border-radius: 999px;
-  padding: 3px 6px;
-  font-size: 14px;
+  right: 6px;
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  pointer-events: none;
 }
