@@ -27,7 +27,13 @@ async function loadSearch() {
   const res = await fetch("/search.json");
   const data = await res.json();
 
-  const results = data.filter(item => item.search.includes(lowerQuery));
+  // ✅ TAG-ONLY partial match
+  const results = data.filter(item =>
+    Array.isArray(item.tags) &&
+    item.tags.some(tag =>
+      String(tag).toLowerCase().includes(lowerQuery)
+    )
+  );
 
   if (results.length === 0) {
     container.innerHTML = `<p>No results found for "${query}"</p>`;

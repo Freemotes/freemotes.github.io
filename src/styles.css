@@ -164,7 +164,14 @@ input[type="text"] {
 
 .grid-item a {
     text-decoration: none; /* removes the default underline */
+    color: #ffffff;
 }
+
+.grid-item a:hover {
+    text-decoration: none; /* removes the default underline */
+    color: #f4ab00;
+}
+
 
 /* 📱 Mobile: smaller tiles */
 @media (max-width: 600px) {

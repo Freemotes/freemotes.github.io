@@ -40,29 +40,59 @@ If you'd like to <a href="/support">support</a>, here are some quick (and option
 </div>
 
 <h2>Collections</h2>
-  <div class="grid">
+  <div class="collections-grid">
     <figure class="grid-item">
       <a href="/search/?q=spongebob">
-        <img src="/images/patrickbrows-112.gif" width="112" height="112">
+        <img src="/info/collections/SpongeBob-Collection.gif" width="180" height="112">
         <figcaption>Spongebob</figcaption>
       </a>
     </figure>
     <figure class="grid-item">
       <a href="/search/?q=pokemon">
-        <img src="/images/DittoArrive.gif" width="112" height="112">
+        <img src="/info/collections/Pokemon-Collection.gif" width="180" height="112">
         <figcaption>Pokémon</figcaption>
       </a>
     </figure>
     <figure class="grid-item">
       <a href="/search/?q=finalfantasy">
-        <img src="/images/chocobo-yellow-112.gif" width="112" height="112">
+        <img src="/info/collections/FinalFantasy-Collection.gif" width="180" height="112">
         <figcaption>Final Fantasy</figcaption>
       </a>
     </figure>
     <figure class="grid-item">
       <a href="/search/?q=humongous">
-        <img src="/images/HESpyFox-112.png" width="112" height="112">
+        <img src="/info/collections/Humongous-Collection.png" width="180" height="112">
         <figcaption>Humongous Entertainment</figcaption>
+      </a>
+    </figure>
+    <figure class="grid-item">
+      <a href="/search/?q=kirby">
+        <img src="/info/collections/Kirby-Collection.gif" width="180" height="112">
+        <figcaption>Kirby</figcaption>
+      </a>
+    </figure>
+    <figure class="grid-item">
+      <a href="/search/?q=mario">
+        <img src="/info/collections/Mario-Collection.gif" width="180" height="112">
+        <figcaption>Mario</figcaption>
+      </a>
+    </figure>
+    <figure class="grid-item">
+      <a href="/search/?q=silksong">
+        <img src="/info/collections/Silksong-Collection.gif" width="180" height="112">
+        <figcaption>Silk Song</figcaption>
+      </a>
+    </figure>
+    <figure class="grid-item">
+      <a href="/search/?q=megaman">
+        <img src="/info/collections/MegaMan-Collection.gif" width="180" height="112">
+        <figcaption>Mega Man</figcaption>
+      </a>
+    </figure>
+    <figure class="grid-item">
+      <a href="/search/?q=television">
+        <img src="/info/collections/Television-Collection.gif" width="180" height="112">
+        <figcaption>Television</figcaption>
       </a>
     </figure>
   </div>
@@ -119,6 +149,18 @@ If you'd like to <a href="/support">support</a>, here are some quick (and option
   }
 
   .variation-preview-card:hover {
+    transform: scale(1.03);
+  }
+
+  .collections-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 220px));
+    gap: 1rem;
+    justify-content: left;
+    align-items: start;
+  }
+
+  .grid-item:hover {
     transform: scale(1.03);
   }
 </style>
