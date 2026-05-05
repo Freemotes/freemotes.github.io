@@ -146,8 +146,8 @@ input[type="text"] {
 }
 
 .card img.variation-badge {
-  width: 32px;
-  height: 32px;
+  width: 59px;
+  height: 9px;
 }
 
 .card.hidden {
@@ -216,10 +216,10 @@ a:hover {
 
 .variation-badge {
   position: absolute;
-  bottom: 6px;
-  right: 6px;
-  width: 32px;
-  height: 32px;
+  bottom: 4px;
+  right: 2px;
+  width: 51px;
+  height: 9px;
   object-fit: contain;
   pointer-events: none;
 }
