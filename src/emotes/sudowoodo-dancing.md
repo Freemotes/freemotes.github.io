@@ -4,7 +4,7 @@ title: "Sudowoodo dancing"
 date: 2026-03-31
 tags: ["pokemon","sudowoodo","animated","dance"]
 description: ""
-image: "/images/Psudo.gif"
+image: "/images/SudoDance.gif"
 ---
 
 <p>
