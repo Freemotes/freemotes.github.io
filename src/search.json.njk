@@ -7,6 +7,7 @@ eleventyExcludeFromCollections: true
 {% for item in collections.emotes %}
 {
   "title": {{ (item.data.title or "") | dump | safe }},
+  "date": "{{ item.date | date('yyyy-MM-dd') }}",
   "tags": {{ (item.data.tags or []) | dump | safe }},
   "description": {{ (item.data.description or "") | dump | safe }},
   "url": {{ item.url | dump | safe }},

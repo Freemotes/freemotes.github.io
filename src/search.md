@@ -27,13 +27,16 @@ async function loadSearch() {
   const res = await fetch("/search.json");
   const data = await res.json();
 
-  // ✅ TAG-ONLY partial match
-  const results = data.filter(item =>
+  // TAG-only partial match
+  let results = data.filter(item =>
     Array.isArray(item.tags) &&
     item.tags.some(tag =>
       String(tag).toLowerCase().includes(lowerQuery)
     )
   );
+
+  // ✅ Sort by newest first (requires date in JSON)
+  results.sort((a, b) => new Date(b.date) - new Date(a.date));
 
   if (results.length === 0) {
     container.innerHTML = `<p>No results found for "${query}"</p>`;
