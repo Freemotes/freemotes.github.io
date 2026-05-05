@@ -145,11 +145,6 @@ input[type="text"] {
   border-radius: 0px;
 }
 
-.card img.variation-badge {
-  width: 59px;
-  height: 9px;
-}
-
 .card.hidden {
   display: none;
 }
@@ -214,7 +209,7 @@ a:hover {
   position: relative;
 }
 
-.variation-badge {
+.card img.variation-badge {
   position: absolute;
   bottom: 4px;
   right: 2px;
