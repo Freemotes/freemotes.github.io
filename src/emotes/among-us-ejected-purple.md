@@ -1,0 +1,20 @@
+---
+layout: layout.njk
+title: "Among Us Ejected - Purple"
+date: 2026-05-06
+tags: ["static","bye","amongus","thumbsup","ejected","dead","rip","good"]
+description: ""
+image: "/images/AmongUs-Ejected-Purple-112.png"
+image_56: "/images/AmongUs-Ejected-Purple-56.png"
+image_28: "/images/AmongUs-Ejected-Purple-28.png"
+variation_group: "among-us-ejected"
+variation_label: "Purple"
+variation_icon: "/images/AmongUs-Ejected-Cyan-112.png"
+variation_page_icon: "/images/AmongUsEjected-Variations.png"
+---
+
+
+
+<p>
+  <button onclick="downloadEmote()">Download Emote</button>
+</p>
