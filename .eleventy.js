@@ -18,6 +18,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/socials");
   eleventyConfig.addPassthroughCopy("src/info");
   eleventyConfig.addPassthroughCopy("src/styles.css");
+  eleventyConfig.addPassthroughCopy("src/favicon.ico");
 
   return {
     dir: {
