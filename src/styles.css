@@ -218,3 +218,13 @@ a:hover {
   object-fit: contain;
   pointer-events: none;
 }
+
+/*scale down banner for mobile*/
+
+.site-banner {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
