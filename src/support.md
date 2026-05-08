@@ -16,6 +16,8 @@ If you'd like to support me and get more emotes for everyone, there are lot of w
 
 - Let friends know about these emotes 🙂
 
+- You can add <a href="/info/TwitchPanel.png" target="_blank" rel="noopener noreferrer">this banner</a> to your Twitch channel's <a href="https://help.twitch.tv/s/article/how-to-edit-info-panels" target="_blank" rel="noopener noreferrer">panels</a> section linking to this website
+
 <br />
 <h3>Paid ways:</h3>
 
@@ -27,7 +29,7 @@ If you'd like to support me and get more emotes for everyone, there are lot of w
 
 - Send a tip via <a href="https://www.paypal.com/paypalme/gromfalloon" target="_blank" rel="noopener noreferrer">PayPal</a>
 
-- Commission me for a custom emote
+- <a href="/commissions" target="_blank" rel="noopener noreferrer">Commission</a> me for a custom emote
 
 <br />
 Everything helps a lot and keeps me making more and more, but never feel obligated to do anything but be good to each other. Thanks!
