@@ -29,7 +29,7 @@ If you'd like to support me and get more emotes for everyone, there are lot of w
 
 - Send a tip via <a href="https://www.paypal.com/paypalme/gromfalloon" target="_blank" rel="noopener noreferrer">PayPal</a>
 
-- <a href="/commissions" target="_blank" rel="noopener noreferrer">Commission</a> me for a custom emote
+- <a href="/commissions">Commission</a> me for a custom emote
 
 <br />
 Everything helps a lot and keeps me making more and more, but never feel obligated to do anything but be good to each other. Thanks!
