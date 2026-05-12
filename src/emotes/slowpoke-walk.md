@@ -2,7 +2,7 @@
 layout: layout.njk
 title: "Slowpoke Walk"
 date: 2026-05-05
-tags: ["static","happy","smile","pokemon","slowpoke","walk","slow"]
+tags: ["animated","happy","smile","pokemon","slowpoke","walk","slow"]
 description: ""
 image: "/images/Slowpoke.gif"
 image_56: ""
