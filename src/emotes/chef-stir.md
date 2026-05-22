@@ -8,3 +8,9 @@ image: "/images/ChefStir.gif"
 image_56: ""
 image_28: ""
 ---
+
+
+
+<p>
+  <button onclick="downloadEmote()">Download Emote</button>
+</p>

@@ -8,3 +8,9 @@ image: "/images/ZorakStare.gif"
 image_56: ""
 image_28: ""
 ---
+
+
+
+<p>
+  <button onclick="downloadEmote()">Download Emote</button>
+</p>
