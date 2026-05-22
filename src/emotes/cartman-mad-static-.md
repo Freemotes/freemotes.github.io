@@ -2,7 +2,7 @@
 layout: layout.njk
 title: "Cartman Mad (static)"
 date: 2026-05-22
-tags: ["static","cartman","southpark","angry","eyebrows","upset"]
+tags: ["static","cartman","southpark","angry","eyebrows","upset","television"]
 description: "There is also an animated version of this."
 image: "/images/CartmanMad-112.png"
 image_56: "/images/CartmanMad-56.png"

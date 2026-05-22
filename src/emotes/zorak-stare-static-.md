@@ -2,7 +2,7 @@
 layout: layout.njk
 title: "Zorak Stare (static)"
 date: 2026-05-22
-tags: ["static","zorak","spaceghost","coasttocoast","stare","eyes","blink"]
+tags: ["static","zorak","spaceghost","coasttocoast","stare","eyes","blink","television"]
 description: "There is also an animated version of this."
 image: "/images/ZorakStare-112.png"
 image_56: "/images/ZorakStare-56.png"

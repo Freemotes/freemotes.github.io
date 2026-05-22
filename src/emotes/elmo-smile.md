@@ -2,7 +2,7 @@
 layout: layout.njk
 title: "Elmo Smile"
 date: 2026-05-22
-tags: ["static","happy","smile","elmo","sesamestreet","red"]
+tags: ["static","happy","smile","elmo","sesamestreet","red","television"]
 description: "This is one of the frames of an animated laughing emote."
 image: "/images/ElmoSmile-112.png"
 image_56: "/images/ElmoSmile-56.png"

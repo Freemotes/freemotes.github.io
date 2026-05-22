@@ -2,7 +2,7 @@
 layout: layout.njk
 title: "Hermes Think"
 date: 2026-05-22
-tags: ["static","thinking","hermes","futurama","glasses"]
+tags: ["static","thinking","hermes","futurama","glasses","television"]
 description: ""
 image: "/images/HermesThink-112.png"
 image_56: "/images/HermesThink-56.png"
