@@ -1,7 +1,7 @@
 ---
 layout: layout.njk
 title: "Ghostface Stab (static)"
-date: 2026-05-28
+date: 2026-05-27
 tags: ["static","scream","ghostface","knife","stab","horror"]
 description: "There is also an animated version of this emote!"
 image: "/images/ScreamStab-112.png"

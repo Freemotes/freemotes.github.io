@@ -1,7 +1,7 @@
 ---
 layout: layout.njk
 title: "Alien Chestburster (static)"
-date: 2026-05-28
+date: 2026-05-27
 tags: ["static","alien","horror","popup","arrive","chestburster"]
 description: "WARNING! Per the Twitch Terms of Service/Community Guidelines:
 

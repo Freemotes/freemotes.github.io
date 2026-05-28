@@ -1,7 +1,7 @@
 ---
 layout: layout.njk
 title: "Freddy Wave (static)"
-date: 2026-05-28
+date: 2026-05-27
 tags: ["static","happy","smile","wave","hi","freddy","horror","nightmare","hello"]
 description: "There is also an animated version of this emote!"
 image: "/images/FreddyWave-112.png"
