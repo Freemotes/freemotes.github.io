@@ -6,7 +6,7 @@ Hello! This page is for Grom's eyes only. What are you doing here? :)
 <br /> <br />
 
 <label for="columnsInput">Emotes per row:</label>
-<input id="columnsInput" type="number" min="1" max="12" value="3">
+<input id="columnsInput" type="number" min="1" max="60" value="3">
 
 <label for="gapSlider">Gap between emotes:</label>
 <input id="gapSlider" type="range" min="10" max="50" value="10">
@@ -79,7 +79,7 @@ Hello! This page is for Grom's eyes only. What are you doing here? :)
     let cols = parseInt(columnsInput.value, 10);
 
     if (isNaN(cols) || cols < 1) cols = 1;
-    if (cols > 12) cols = 12;
+    if (cols > 60) cols = 60;
 
     grid.style.setProperty("--columns", cols);
   }
