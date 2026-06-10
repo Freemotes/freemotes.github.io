@@ -35,16 +35,61 @@ Hello! This page is for Grom's eyes only. What are you doing here? :)
       {% set emoteDate = emote.date.toISOString().slice(0,10) %}
 
       {% if emoteDate == latestDate %}
-        <a class="card" href="{{ emote.url }}">
-          <img loading="lazy" src="{{ emote.data.image }}" alt="{{ emote.data.title }}">
-        </a>
+        <div
+          class="card selectable-emote"
+          data-image="{{ emote.data.image }}"
+        >
+          <img
+            loading="lazy"
+            src="{{ emote.data.image }}"
+            alt="{{ emote.data.title }}"
+          >
+        </div>
       {% endif %}
 
     {% endif %}
   {% endfor %}
 </div>
+<br />
+<br />
 
+<label for="previewColumns">
+  Emotes per row:
+</label>
 
+<input
+  id="previewColumns"
+  type="number"
+  min="1"
+  max="20"
+  value="4"
+>
+<br />
+<br />
+
+<div id="previewWrapper">
+
+  <div id="selectedPreview" class="video-preview">
+
+    <div class="preview-title">
+      ---------- FREEMOTES.ART ----------
+    </div>
+
+    <div class="preview-footer">
+      Free emotes for everyone!
+    </div>
+
+    <div id="selectedGrid" class="selected-grid"></div>
+
+    <div class="preview-footer">
+      Please visit my website for tons more free emotes!
+    </div>
+
+    <div class="preview-bottom">
+    Please attribute used emotes to Gromfalloon. Follow me for more free emotes! Everything helps!
+    </div>
+
+</div>
 
 <style>
   #emoteGrid .card {
@@ -66,6 +111,98 @@ Hello! This page is for Grom's eyes only. What are you doing here? :)
   grid-auto-rows: 120px;
   justify-content: start;
   gap: var(--gap, 10px);
+}
+.selectable-emote {
+  cursor: pointer;
+}
+
+.selectable-emote.selected img {
+  outline: 5px solid #00ff00;
+  outline-offset: -5px;
+}
+
+#previewWrapper {
+  display: inline-block;
+  transform-origin: top left;
+}
+
+.video-preview {
+
+  width: 960px;
+  height: 540px;
+
+  box-sizing: border-box;
+
+  background: #240018;
+  border: 4px solid #f4ab00;
+
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-family:
+    Impact,
+    Haettenschweiler,
+    "Arial Narrow Bold",
+    sans-serif;
+
+  overflow: hidden;
+}
+
+.preview-title {
+  font-size: 60px;
+  font: Impact;
+  color: #f4ab00;
+  font-weight: bold;
+}
+
+.preview-subtitle {
+  font-size: 28px;
+  color: #f4ab00;
+  margin-bottom: 20px;
+}
+
+.preview-footer {
+  font-size: 28px;
+  color: #f4ab00;
+}
+
+.preview-bottom {
+  font-size: 22px;
+  color: #f4ab00;
+}
+
+.selected-grid {
+
+  flex: 1;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(var(--preview-columns, 4), 110px);
+
+  gap: 12px;
+
+  justify-content: center;
+  align-content: center;
+}
+
+.selected-grid img {
+
+  width: 110px;
+  height: 110px;
+
+  object-fit: contain;
+
+  border: 3px solid #f4ab00;
+}
+
+.preview-site {
+  font-size: 56px;
+  color: #f4ab00;
+  font-weight: bold;
 }
 </style>
 
@@ -99,4 +236,232 @@ Hello! This page is for Grom's eyes only. What are you doing here? :)
   // init
   updateColumns();
   updateGap();
+
+  const selectedGrid =
+  document.getElementById("selectedGrid");
+
+document
+  .querySelectorAll(".selectable-emote")
+  .forEach(card => {
+
+    card.addEventListener("click", () => {
+
+      const image =
+        card.dataset.image;
+
+      card.classList.toggle("selected");
+
+      if (card.classList.contains("selected")) {
+
+        const img =
+          document.createElement("img");
+
+        img.src = image;
+        img.dataset.image = image;
+
+        selectedGrid.appendChild(img);
+
+      } else {
+
+        const existing =
+          selectedGrid.querySelector(
+            `img[data-image="${image}"]`
+          );
+
+        if (existing)
+          existing.remove();
+      }
+
+    });
+
+});
+</script>
+
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+<script>
+const recordBtn =
+  document.getElementById("recordBtn");
+
+recordBtn.addEventListener(
+  "click",
+  async () => {
+
+    const duration =
+      parseInt(
+        document.getElementById(
+          "durationInput"
+        ).value,
+        10
+      );
+
+    recordBtn.disabled = true;
+    recordBtn.textContent =
+      "Recording...";
+
+    const preview =
+      document.getElementById(
+        "selectedPreview"
+      );
+
+    const width =
+      preview.offsetWidth;
+
+    const height =
+      preview.offsetHeight;
+
+    const canvas =
+      document.createElement("canvas");
+
+    canvas.width = width;
+    canvas.height = height;
+
+    const ctx =
+      canvas.getContext("2d");
+
+    const stream =
+      canvas.captureStream(15);
+
+    const recorder =
+      new MediaRecorder(
+        stream,
+        {
+          mimeType:
+            "video/webm"
+        }
+      );
+
+    const chunks = [];
+
+    recorder.ondataavailable =
+      e => {
+
+        if (e.data.size)
+          chunks.push(e.data);
+
+      };
+
+    recorder.start();
+
+    const start =
+      performance.now();
+
+    async function renderLoop() {
+
+      const screenshot =
+        await html2canvas(
+          preview,
+          {
+            backgroundColor: null
+          }
+        );
+
+      ctx.clearRect(
+        0,
+        0,
+        width,
+        height
+      );
+
+      ctx.drawImage(
+        screenshot,
+        0,
+        0
+      );
+
+      if (
+        performance.now() -
+          start <
+        duration * 1000
+      ) {
+
+        requestAnimationFrame(
+          renderLoop
+        );
+
+      } else {
+
+        recorder.stop();
+
+      }
+
+    }
+
+    renderLoop();
+
+    recorder.onstop =
+      () => {
+
+        const blob =
+          new Blob(
+            chunks,
+            {
+              type:
+                "video/webm"
+            }
+          );
+
+        const url =
+          URL.createObjectURL(
+            blob
+          );
+
+        const a =
+          document.createElement(
+            "a"
+          );
+
+        a.href = url;
+
+        a.download =
+          "freemote-video.webm";
+
+        a.click();
+
+        URL.revokeObjectURL(
+          url
+        );
+
+        recordBtn.disabled =
+          false;
+
+        recordBtn.textContent =
+          "Download Video";
+
+      };
+
+  }
+);
+</script>
+
+<script>
+  const previewColumnsInput =
+  document.getElementById("previewColumns");
+
+function updatePreviewColumns() {
+
+  let cols =
+    parseInt(
+      previewColumnsInput.value,
+      10
+    );
+
+  if (isNaN(cols) || cols < 1)
+    cols = 1;
+
+  if (cols > 20)
+    cols = 20;
+
+  selectedGrid.style.setProperty(
+    "--preview-columns",
+    cols
+  );
+}
+
+previewColumnsInput.addEventListener(
+  "input",
+  updatePreviewColumns
+);
+
+updatePreviewColumns();
 </script>
