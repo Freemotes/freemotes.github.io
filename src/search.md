@@ -35,23 +35,39 @@ async function loadSearch() {
     )
   );
 
-  // ✅ Sort by newest first (requires date in JSON)
+  // Sort by newest first
   results.sort((a, b) => new Date(b.date) - new Date(a.date));
 
+  let html = "";
+
   if (results.length === 0) {
-    container.innerHTML = `<p>No results found for "${query}"</p>`;
-    return;
+    html += `<p>No results found for "${query}"</p>`;
+  } else {
+    html += `
+      <div class="grid">
+        ${results.map(item => `
+          <a class="card" href="${item.url}">
+            <img src="${item.image}" alt="${item.title}" width="112" height="112" loading="lazy">
+          </a>
+        `).join("")}
+      </div>
+    `;
   }
 
-  container.innerHTML = `
-    <div class="grid">
-      ${results.map(item => `
-        <a class="card" href="${item.url}">
-          <img src="${item.image}" alt="${item.title}" width="112" height="112" loading="lazy">
+  // Special Zelda badge section
+  if (lowerQuery === "zelda") {
+    html += `
+      <div class="zelda-badges">
+        <h1>Badges</h1>
+        <p>Click the image below for a special set of badges related to The Legend of Zelda to use for bits, subscribers or whatever else you have in mind.</p>
+        <a href="/info/Badges-zelda.zip" download>
+          <img src="/info/badges-zelda-all.png" alt="The Legend of Zelda badge collection">
         </a>
-      `).join("")}
-    </div>
-  `;
+      </div>
+    `;
+  }
+
+  container.innerHTML = html;
 }
 
 loadSearch();
