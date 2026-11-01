@@ -26,17 +26,33 @@
 <link rel="apple-touch-icon" href="/info/favicon-192.png">
   <link rel="stylesheet" href="/styles.css">
 </head>
-
+<script src="/scripts/search.js"></script>
 <body>
 
 <div class="wrapper">
   <header>
     <nav>
-      <ul>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">
+        ☰ Menu
+      </button>
+
+      <ul id="navMenu">
         <li><a href="/">Home</a></li>
         <li><a href="/emotes/">Emotes</a></li>
         <li><a href="/about">About Me</a></li>
-          <li><a href="/support">Support Me</a></li>
+        <li><a href="/support">Support Me</a></li>
+        <li class="search">
+          <div class="searchWrap">
+            <input
+              type="text"
+              class="searchInput"
+              placeholder="Search emotes..."
+              autocomplete="off"
+            />
+            <button class="searchButton">Search</button>
+            <ul class="suggestions"></ul>
+          </div>
+        </li>
       </ul>
     </nav>
   </header>
@@ -80,150 +96,20 @@
   </p>
   <a href="/info/attribute1.png"><img src="/info/attribute1.png" width="122" height="134"></a>
   {% endif %}
-  <h3>Search for an emote:</h3>
 
-  <div style="position: relative; max-width: 300px; display: flex; gap: 6px;">
-    <input 
-      type="text" 
-      id="searchInput" 
-      placeholder="Search emotes..." 
-      autocomplete="off" 
-    />
-    <button id="searchButton">Search</button>
+    <h3>Search for an emote:</h3>
 
-    <ul id="suggestions" style="
-      border-radius: 6px;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      list-style: none;
-      padding: 0;
-      margin: 4px 0 0;
-      background: #18181b;
-      max-height: 150px;
-      overflow-y: auto;
-    "></ul>
-    
-  </div>
+    <div class="searchWrap">
+      <input
+        type="text"
+        class="searchInput"
+        placeholder="Search emotes..."
+        autocomplete="off"
+      />
+      <button class="searchButton">Search</button>
+      <ul class="suggestions"></ul>
+    </div>
 
-  <script>
-  const input = document.getElementById("searchInput");
-  const button = document.getElementById("searchButton");
-  const suggestionsBox = document.getElementById("suggestions");
-  const searchWrap = document.getElementById("searchWrap");
-
-  let allTags = [];
-
-  // Load tags from search.json
-  fetch("/search.json")
-    .then(res => res.json())
-    .then(data => {
-      const tagSet = new Set();
-
-      data.forEach(item => {
-        if (Array.isArray(item.tags)) {
-          item.tags.forEach(tag => {
-            const clean = String(tag).trim().toLowerCase();
-            if (clean) tagSet.add(clean);
-          });
-        }
-      });
-
-      allTags = Array.from(tagSet).sort();
-    })
-    .catch(err => {
-      console.error("Failed to load tags:", err);
-    });
-
-  function performSearch() {
-    const query = input.value.trim();
-    if (query) {
-      window.location.href = `/search/?q=${encodeURIComponent(query)}`;
-    }
-  }
-
-  function clearSuggestions() {
-    suggestionsBox.innerHTML = "";
-    suggestionsBox.style.display = "none";
-  }
-
-  function showSuggestions(matches) {
-    suggestionsBox.innerHTML = "";
-
-    if (!matches.length) {
-      suggestionsBox.style.display = "none";
-      return;
-    }
-
-    matches.forEach(tag => {
-      const li = document.createElement("li");
-      li.textContent = tag;
-      li.style.padding = "6px";
-      li.style.cursor = "pointer";
-
-      li.addEventListener("mouseenter", () => {
-        li.style.background = "#27272a";
-      });
-
-      li.addEventListener("mouseleave", () => {
-        li.style.background = "transparent";
-      });
-
-      li.addEventListener("click", () => {
-        input.value = tag;
-        clearSuggestions();
-        input.focus();
-      });
-
-      suggestionsBox.appendChild(li);
-    });
-
-    suggestionsBox.style.display = "block";
-  }
-
-  // Button click
-  button.addEventListener("click", performSearch);
-
-  // Enter key
-  input.addEventListener("keydown", function (event) {
-    if (event.key === "Enter") {
-      performSearch();
-    }
-  });
-
-  // Autocomplete logic (TAGS ONLY)
-  input.addEventListener("input", function () {
-    const query = input.value.trim().toLowerCase();
-
-    if (!query) {
-      clearSuggestions();
-      return;
-    }
-
-    const startsWith = [];
-    const contains = [];
-
-    for (const tag of allTags) {
-      if (tag.startsWith(query)) {
-        startsWith.push(tag);
-      } else if (tag.includes(query)) {
-        contains.push(tag);
-      }
-
-      if (startsWith.length + contains.length >= 5) break;
-    }
-
-    showSuggestions([...startsWith, ...contains].slice(0, 5));
-  });
-
-  // Hide suggestions when clicking outside
-  document.addEventListener("click", (e) => {
-    if (!searchWrap.contains(e.target)) {
-      clearSuggestions();
-    }
-  });
-</script>
   </main>
 
   <footer class="page-footer">
@@ -232,6 +118,7 @@
     </p>
   </footer>
   </div>
+
 </body>
 </html>
 
